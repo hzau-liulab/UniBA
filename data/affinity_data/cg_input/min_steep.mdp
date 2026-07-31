@@ -1,0 +1,18 @@
+integrator  = steep
+nsteps      = 30000
+emtol       = 30.0
+emstep      = 0.05
+
+cutoff-scheme = Verlet
+nstlist       = 10
+rcoulomb      = 1.1
+rvdw          = 1.1
+vdwtype       = Shift
+
+coulombtype  = Cut-off
+epsilon_r    = 15
+
+pbc          = xyz
+
+constraints  = none
+

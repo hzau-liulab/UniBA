@@ -1,0 +1,34 @@
+; **Energy Minimization for Coarse-Grained Antibody-Antigen Complex**
+integrator  = steep      ; 使用最速下降法 (steepest descent) 进行能量最小化
+nsteps      = 10000       ; 适用于大体系 (如抗体-抗原复合物)
+emtol       = 10.0       ; 最大力收敛阈值，单位 kJ/mol·nm，推荐 50 - 100
+emstep      = 0.01       ; 最小化步长 (nm)，更小的步长可以提高稳定性
+
+; **Output Control**
+nstxout     = 100        ; 每 100 步存储一次坐标（用于观察最小化过程）
+nstlog      = 100        ; 每 100 步写一次 log 文件
+nstenergy   = 100        ; 每 100 步写一次能量文件
+nstcgsteep  = 500        ; CG 最速下降法的步数间隔
+
+; **Neighbor Searching**
+cutoff-scheme = Verlet   ; Verlet 列表
+nstlist       = 10       ; 计算邻居列表的步长
+rcoulomb      = 1.1      ; 静电相互作用截断 (nm)
+rvdw          = 1.1      ; 范德华作用截断 (nm)
+vdwtype       = Cut-off  ; 范德华作用方式
+
+; **Electrostatics**
+coulombtype  = Cut-off       ; 处理长程静电作用
+epsilon_r    = 15        ; 设置介电常数
+;fourierspacing = 0.25   ; PME 网格间距
+;pme_order    = 4        ; PME 插值阶数
+;ewald_rtol   = 1e-5     ; Ewald 计算的相对误差
+
+; **Boundary Conditions**
+pbc          = xyz      ; 周期性边界条件（xyz 三个方向）
+constraints  = none     ; 关闭约束（CG 模拟一般不使用 LINCS）
+; lincs-order  = 8        ; LINCS 约束阶数（CG 可能不需要）
+
+; **Energy Dispersion Correction**
+DispCorr = no      ; 能量和压力修正
+
