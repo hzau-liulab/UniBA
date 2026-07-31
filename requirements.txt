@@ -1,0 +1,17 @@
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.3.3
+scikit-learn==1.6.1
+openpyxl==3.1.5
+biopython==1.87
+biotite==0.39.0
+MDAnalysis==2.9.0
+openmm==8.3.1
+pdbfixer==1.12.0
+rdkit-pypi==2022.9.5
+joblib==1.5.3
+networkx==3.4.2
+GraphRicciCurvature==0.5.3.2
+fair-esm==2.0.0
+torch-geometric==2.7.0
+torchdrug==0.2.1
