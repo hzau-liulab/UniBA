@@ -1,13 +1,6 @@
-# UniBA
+# Description
 
-UniBA predicts binding affinity for protein-protein (PPI), antibody-antigen
-(AAI), and TCR-pMHC complexes. This repository contains the source code,
-labels, pair lists, cross-validation splits, and small preprocessing assets
-needed to reproduce the paper from raw PDB structures.
-
-Generated features and graphs are **not distributed**. They are build outputs:
-users restore the raw PDB archive, install the documented tools, and regenerate
-them with one pipeline command.
+**UniBA** is a unified multimodal framework for protein complex binding affinity prediction. It integrates paired sequence representations with multi-scale structural modeling, including residue-level interface graphs and coarse-grained molecular graphs, through a dynamic fusion strategy to predict binding affinity across diverse protein interaction systems.
 
 ## Reproduction status
 
