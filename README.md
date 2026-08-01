@@ -1,6 +1,7 @@
 # Description
 
 **UniBA** is a unified multimodal framework for protein complex binding affinity prediction. It integrates paired sequence representations with multi-scale structural modeling, including residue-level interface graphs and coarse-grained molecular graphs, through a dynamic fusion strategy to predict binding affinity across diverse protein interaction systems.
+![image](img/UniBA.png)  
 
 ## Reproduction status
 
