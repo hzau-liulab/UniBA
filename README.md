@@ -2,34 +2,38 @@
 
 **UniBA** is a unified multimodal framework for protein complex binding affinity prediction. It integrates paired sequence representations with multi-scale structural modeling, including residue-level interface graphs and coarse-grained molecular graphs, through a dynamic fusion strategy to predict binding affinity across diverse protein interaction systems.
 ![image](img/UniBA.png)  
+  
+# Usage
+## 1. Clone the repository
 
-## Reproduction status
-
-The raw-PDB workflow was tested end to end on Linux on 2026-07-30 with one
-representative from every dataset:
-
-| Dataset | Pair | Raw-to-graph | Fold-0 prediction |
-| --- | --- | --- | ---: |
-| PPI | `1a22_A_B` | passed | 8.00357 |
-| AAI | `1bj1_HL_W` | passed | 8.34333 |
-| TCR-pMHC | `1ao7_DE_CA` | passed | 5.88164 |
-
-The test covered chain extraction/remapping, MINT, ESM2, ESM-IF, DSSP,
-GHECOM, GraphRicciCurvature, PLIP/Open Babel, Martini 2.2, Gromacs energy
-minimization, energy features, residue graphs, coarse-grained graphs, checkpoint
-loading, and model inference.
-
-## 1. Clone and validate the source
-
-Run all commands from the repository root on a Linux machine:
+Clone the UniBA repository and enter the project directory:
 
 ```bash
-python scripts/validate_public_release.py --github
-python scripts/validate_reproducibility.py --mode metadata
+git clone https://github.com/hzau-liulab/UniBA.git
+cd UniBA
 ```
 
-Expected metadata totals are 2,328 PPI, 772 AAI, and 227 TCR-pMHC pairs,
-for exactly 3,327 label and raw-PDB records.
+## 2. Set up the Python environment
+
+UniBA requires a Python environment for model training and inference. We recommend creating a dedicated conda environment and installing the required dependencies within this environment.
+
+The tested environment includes:
+
+**Python packages**
+
+| Package | Version |
+| --- | --- |
+| Python | 3.10.20 |
+| PyTorch | 2.0.1 |
+| CUDA | 11.8 |
+| PyTorch Geometric | 2.7.0 |
+| torch-scatter | 2.1.2 |
+
+Create and activate the UniBA environment:
+
+```bash
+bash scripts/setup_conda_envs.sh
+conda activate uniba_repro
 
 ## 2. Create the Python environments
 
@@ -248,6 +252,22 @@ utils/                      graph/model utilities
 scripts/                    setup, pipeline, validation, and training entrypoints
 envs/                       tested Conda specifications
 ```
+
+## Reproduction status
+
+The raw-PDB workflow was tested end to end on Linux on 2026-07-30 with one
+representative from every dataset:
+
+| Dataset | Pair | Raw-to-graph | Fold-0 prediction |
+| --- | --- | --- | ---: |
+| PPI | `1a22_A_B` | passed | 8.00357 |
+| AAI | `1bj1_HL_W` | passed | 8.34333 |
+| TCR-pMHC | `1ao7_DE_CA` | passed | 5.88164 |
+
+The test covered chain extraction/remapping, MINT, ESM2, ESM-IF, DSSP,
+GHECOM, GraphRicciCurvature, PLIP/Open Babel, Martini 2.2, Gromacs energy
+minimization, energy features, residue graphs, coarse-grained graphs, checkpoint
+loading, and model inference.
 
 The empty generated-output directories visible on the server are not source
 folders that need uploading; Git does not track empty directories. This
