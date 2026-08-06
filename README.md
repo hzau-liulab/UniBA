@@ -25,8 +25,8 @@ The main dependencies used in the reported experiments are listed below.
 | Package | Version | Package | Version | Package | Version | Package | Version |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Python | 3.9 | PyTorch | 1.12.0 | CUDA | 11.3 | PyTorch Geometric | 2.3.1 |
-| torch-scatter | 2.1.0 | fair-esm | 2.0.1 | ANARCI | 1.3 | Biopython | 1.85 |
-| MDAnalysis | 2.7.0 | GraphRicciCurvature | 0.5.3.1 | NetworkX | 3.1 | scikit-learn | 1.3.2 |
+| fair-esm | 2.0.1 | Biopython | 1.85 | ANARCI | 1.3 | torch-scatter | 2.1.0 | 
+| scikit-learn | 1.3.2 | MDAnalysis | 2.7.0 | NetworkX | 3.1 | GraphRicciCurvature | 0.5.3.1 |
 | NumPy | 1.26.4 | SciPy | 1.12.0 | pdbfixer | 1.9 | Pandas | 2.2.3 |
 
 ## 3. Install third-party software
