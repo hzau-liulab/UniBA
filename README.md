@@ -76,8 +76,14 @@ cd ./data/cg_input/
 ./martini_steps.sh
 ```
 
-## 7. Generate every feature and graph
+## 6. Generate features and construct graphs
 
+After processing the protein complex structures, UniBA extracts sequence and structural representations and constructs multi-scale graphs required for affinity prediction.
+
+Run the feature generation and graph construction script:
+
+```bash
+python generate_graph.py
 Run the full workflow:
 
 ```bash
