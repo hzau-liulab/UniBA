@@ -120,7 +120,7 @@ per-residue features, PLIP reports, solvated Gromacs systems, energy matrices,
 and graph files can require hundreds of GB. Check disk space before a full run.
 These files are intentionally excluded from Git.
 
-## 8. Run inference or training
+## 7. Run inference or training
 
 After all features and graphs for a requested split exist:
 
@@ -136,22 +136,11 @@ python UniAffinity.py --train --no-test --cv 5 --num_epochs 100
 python UniAffinity.py --test --cv 5 --dataset test
 ```
 
-Predictions are written under `output/UniBA_wo_res/`; analysis tensors are
-written under `analysis_graph/`. Both directories are ignored by Git.
+Predictions are written under `output/UniBA_wo_res/`; analysis tensors are written under `analysis_graph/`. Both directories are ignored by Git.
 
-## 9. Data contract and layout
+## 8. Reproduction status
 
-A pair ID has the form `PDB_partner1chains_partner2chains`. For example,
-`1akj_DE_AB` assigns D/E to partner 1 and A/B to partner 2. The data preparation
-stage maps selected chains to A, B, C, ... in partner order for all downstream
-tools.
-
-
-
-## Reproduction status
-
-The raw-PDB workflow was tested end to end on Linux on 2026-07-30 with one
-representative from every dataset:
+The raw-PDB workflow was tested end to end on Linux on 2026-07-30 with one representative from every dataset:
 
 | Dataset | Pair | Raw-to-graph | Fold-0 prediction |
 | --- | --- | --- | ---: |
