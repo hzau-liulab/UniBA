@@ -59,12 +59,22 @@ UniBA requires protein complex structures, affinity labels, and pretrained model
 
 Please place the downloaded files in the corresponding directories:
 
-```text
-data/
-checkpoints/
 
-## 6. Configure the raw-PDB pipeline
+## 5. Process datasets
+Before training or inference, the downloaded protein complex structures need to be processed to generate the inputs required by UniBA. The data processing pipeline includes preprocessing atomic-level PDB structures and generating MARTINI coarse-grained (CG) representations.
 
+First, enter the data/ directory and process the protein complex structures:
+```bash
+cd data/
+python process_data.py
+```
+
+Then, convert the processed atomic-level PDB structures into MARTINI coarse-grained models using the provided script. The MARTINI coarse-graining step requires a Python 2 environment:
+```bash
+conda activate python2
+cd ./data/cg_input/
+./martini_steps.sh
+```
 
 ## 7. Generate every feature and graph
 
